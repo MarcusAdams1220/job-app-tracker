@@ -5,14 +5,22 @@ DROP TABLE jobs;
 
 CREATE TABLE jobs(
   id SERIAL PRIMARY KEY,
-  Position_title TEXT,
+  user_id INTEGER,
+  position_title TEXT,
+  job_url TEXT,
+  closing_date DATETIME,
   company_name TEXT,
+  company_url TEXT,
+  contact_person TEXT,
+  contact_phone TEXT,
+  contact_email TEXT,
+  salary TEXT,
   notes_about_company TEXT,
-  Job advertisement screen shot? TEXT,
-  Date applied,
-  Upcoming interview BOOLEAN,
-  Completed interview BOOLEAN,
-  Received job offer BOOLEAN
+  job_advertisement_screen_shot TEXT,
+  date_applied DATETIME,
+  upcoming_interview BOOLEAN,
+  completed_interview BOOLEAN,
+  received_job_offer BOOLEAN
   );
 
 
