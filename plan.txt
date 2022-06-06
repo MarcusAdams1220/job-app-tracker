@@ -33,7 +33,7 @@ click on job it will pop out at you
 
 tasks to do 
 add job/edit job
-jobs only for which user is logged in
+jobs only for which user is logged in - filter
 
 Home page
 login page
