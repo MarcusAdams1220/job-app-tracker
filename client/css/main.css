@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 2em;
+  display: center;
+  text-align: center;
+  
+}
+
+form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+form fieldset {
+  border: none;
+  padding: 0;
+  padding-right: 0;
+}
+
+form input {
+  padding: 0.5em;
+  width: 100%;
+}

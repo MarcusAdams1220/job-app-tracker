@@ -1,0 +1,38 @@
+.header-nav {
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.header-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+
+}
+
+.header-nav li {
+  padding: 0 0.5em;
+}
+
+.material-icons {
+  cursor: pointer;
+}
+
+.material-icons.add-job {
+  color: rgb(222, 12, 12);
+}
+
+.material-icons.edit-job {
+  color: rgb(249, 184, 5);
+}
+
+.material-icons.sign-up {
+  color: rgb(34, 241, 6);
+}
+
+.material-icons.login,
+.material-icons.delete {
+  color: rgb(55, 13, 243);
+}
+
