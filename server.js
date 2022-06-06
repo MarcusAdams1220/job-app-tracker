@@ -23,6 +23,3 @@ app.use(sessions)
 app.use('/api/jobs', jobsController)
 app.use('/api/users', usersController)
 app.use('/api/sessions', sessionsController)
-
-
-console.log(test)
