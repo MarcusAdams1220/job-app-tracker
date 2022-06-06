@@ -1,0 +1,12 @@
+users data
+name, email, password password digest
+
+
+Position title
+Company name
+notes about company
+Job advertisement
+Date applied
+Upcoming interview — boolean
+Completed interview — boolean
+Received job offer — boolean
