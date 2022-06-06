@@ -1,12 +1,42 @@
 users data
 name, email, password password digest
 
+profile page
+resume
+cover letter
+
 
 Position title
-Company name
+closing date
+Company name - url
+salary range
+type of employment fulltime/partime
+remote onsite
+
 notes about company
 Job advertisement
 Date applied
 Upcoming interview — boolean
 Completed interview — boolean
 Received job offer — boolean
+
+
+features
+possible compare 2 jobs
+
+
+closing date item to go red 3 days before close
+black after closed if not applied for
+
+click on job it will pop out at you
+
+
+tasks to do 
+add job/edit job
+jobs only for which user is logged in
+
+Home page
+login page
+job pages
+seek.com
+indeed.com
