@@ -29,9 +29,10 @@ function login(event) {
     body: JSON.stringify(data)
   })
   .then(res => res.json())
-  .then(userName => {
-    state.loggedInUserName = userName})
-    .then(() => {renderJobList()
+  .then(user => {
+    state.loggedInUserName = user.userName
+    state.sessionId = user.sessionId
+    renderJobList()
   })
   .then(document.querySelector('.nav-list').innerHTML =`      <li class="material-icons add-job" onClick="renderAddJob()">add_circle</li>
   <li class="material-icons edit-job" onClick="renderJobList()">edit</li>
