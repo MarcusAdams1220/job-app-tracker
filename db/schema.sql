@@ -22,8 +22,10 @@ CREATE TABLE jobs(
   received_job_offer BOOLEAN
   );
 
-INSERT INTO jobs(user_id,     position_title,
- job_url,
+INSERT INTO jobs(
+  user_id,     
+  position_title,
+  job_url,
   closing_date,
   company_name,
   company_url,
@@ -62,7 +64,7 @@ INSERT INTO jobs(user_id,     position_title,
   'unlisted',
   'fulltime',
   'Napier & Blakeley is an independent property, development and sustainability consultancy. Since 1985 we have been providing pragmatic and commercially orientated advice covering the imperatives that actually matter. Cost ▪ Risk ▪ Return, reflects our clients'' mandate: how much will it cost, what is the risk, and how can we manage these issues to maximise return.',
-  'too lazy')
+  'too lazy');
 
 
 
