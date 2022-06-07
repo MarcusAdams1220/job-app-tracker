@@ -13,10 +13,10 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  const  {name, title, type, salary, url, closingDate, CompanyName, companyUrl, contactPerson, ContactPHone, contactEmail, notes, screenShot, dateApplied, upcomingInterview, completedInterview, jobOffer}  = req.body
+  const {position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob} = req.body
 
   Job
-    .create(name, title, type, salary, url, closingDate, CompanyName, companyUrl, contactPerson, ContactPHone, contactEmail, notes, screenShot, dateApplied, upcomingInterview, completedInterview, jobOffer)
+    .create(position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob)
     .then((job) => res.json(job));
 });
 
