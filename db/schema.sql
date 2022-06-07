@@ -14,7 +14,6 @@ CREATE TABLE jobs(
   contact_email TEXT,
   type_of_employment TEXT,
   salary TEXT,
-  type_of_employment TEXT,
   notes_about_company TEXT,
   job_advertisement_screen_shot TEXT,
   date_applied TEXT,
