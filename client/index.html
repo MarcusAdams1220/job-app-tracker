@@ -6,6 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/navigation.css">
+  <link rel="stylesheet" href="/css/jobs.css">
+
   <script src="/js/initialize.js"></script>
   <script src="/js/components/add_job.js" defer></script>
   <script src="/js/components/job_list.js" defer></script>
@@ -17,10 +24,10 @@
   <h1>Welcome to Your Job Applications</h1>
   <nav class="header-nav">
     <ul>
-      <li onClick="renderAddJob()">Add Job</li>
-      <li onClick="renderJobList()">View Job</li>
-      <li onClick="renderSignUp()">Signup</li>
-      <li onClick="renderLogin()">Login</li>
+      <li class="material-icons add-job" onClick="renderAddJob()">add_circle</li>
+      <li class="material-icons edit-job" onClick="renderJobList()">edit</li>
+      <li class="material-icons sign-up" onClick="renderSignUp()">person_add</li>
+      <li class="material-icons login" onClick="renderLogin()">login</li>
     </ul>
   </nav> 
  
