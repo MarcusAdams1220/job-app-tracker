@@ -8,7 +8,7 @@ const usersController = require('./controllers/users_controller')
 const sessionsController = require('./controllers/sessions_controller')
 
 const app = express();
-const port = process.env.Port || 2222;
+const port = process.env.PORT || 2222;
 
 app.listen(port, () => console.log(`listening to port ${port}`));
 
