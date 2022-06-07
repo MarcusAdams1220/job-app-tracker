@@ -12,12 +12,13 @@ router.get("/", (req, res) => {
   .then((jobs) => res.json(jobs))
 });
 
-router.post("/", (req, res) => {
-
+router.post("/:id", (req, res) => {
   const {position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhone, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob} = req.body
+  
+  const userId = req.params.id
 
   Job
-    .create(position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhone, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob)
+    .create(userId,position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhone, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob)
     .then(console.log(position))
     .then(job => res.json(job));
    
