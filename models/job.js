@@ -9,11 +9,12 @@ const Job = {
       .then(dbRes => dbRes.rows)
   },
 
-  create: (position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob) => {
+  create: (userId, position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob) => {
     // RETURNING * gives back the record we've just created with the INSERT statement.
 
     const sql = `
-      INSERT INTO jobs(  
+      INSERT INTO jobs(
+        user_id,
         position_title,
         job_url,
         closing_date,
@@ -30,12 +31,12 @@ const Job = {
         upcoming_interview,
         completed_interview,
         received_job_offer)
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17)
 
       RETURNING *
     `
     return db
-      .query(sql, [position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob])
+      .query(sql, [userId, position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob])
       .then(dbRes => dbRes.rows[0])
   },
 
