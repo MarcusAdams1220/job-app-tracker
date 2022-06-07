@@ -14,22 +14,22 @@ function renderJobs() {
       <h2>${job.name}</h2>
       <span onClick="deleteJob(event)" >Delete</span>
     </header>
-    <p>${job.title}</p>
-    <p>${job.type}</p>
-    <p>${job.salary}</p>
-    <p>${job.url}</p>
-    <p>${job.closingDate}</p>
-    <p>${job.companyName}</p>
-    <p>${job.companyUrl}</p>
-    <p>${job.contactPerson}</p>
-    <p>${job.contactPhone}</p>
-    <p>${job.contactEmail}</p>
-    <p>${job.notes}</p>
-    <p>${job.screenShot}</p>
-    <p>${job.dateApplied}</p>
-    <p>${job.upcomingInterview}</p>
-    <p>${job.completedInterview}</p>
-    <p>${job.jobOffer}</p>
+    <p>Job Title: ${job.title}</p>
+    <p>Job Type: ${job.type}</p>
+    <p>Salary: ${job.salary}</p>
+    <p>Job Link: ${job.url}</p>
+    <p>Closing Date: ${job.closingDate}</p>
+    <p>Company Name: ${job.companyName}</p>
+    <p>Company Website: ${job.companyUrl}</p>
+    <p>Contact Person: ${job.contactPerson}</p>
+    <p>Contact Phone Number: ${job.contactPhone}</p>
+    <p>Contact Email: ${job.contactEmail}</p>
+    <p>Notes: ${job.notes}</p>
+    <p>Job Ad Screenshot: ${job.screenShot}</p>
+    <p>Date Applied: ${job.dateApplied}</p>
+    <p>Upcoming Interview: ${upcomingOrNot(job.upcomingInterview)}</p>
+    <p>Completed Interview: ${completedOrNot(job.completedInterview)}</p>
+    <p>Received Job Offer: ${receivedOrNot(job.jobOffer)}</p>
   </section>
   `).join('')
 }
@@ -45,4 +45,28 @@ function deleteJobs(event) {
     state.jobs = state.jobs.filter(t => t.id != jobId)
     renderJobList()
   })
+}
+
+function upcomingOrNot (boolean) {
+  if (boolean) {
+    return 'Upcoming'
+  } else {
+    return 'No Interview'
+  }
+}
+
+function completedOrNot (boolean) {
+  if (boolean) {
+    return 'Completed'
+  } else {
+    return 'Not Yet'
+  }
+}
+
+function receivedOrNot (boolean) {
+  if (boolean) {
+    return 'Received'
+  } else {
+    return 'Not Yet'
+  }
 }
