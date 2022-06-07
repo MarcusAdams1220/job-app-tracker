@@ -9,7 +9,7 @@ const Job = {
       .then(dbRes => dbRes.rows)
   },
 
-  create: (name, clue, address) => {
+  create: () => {
     // RETURNING * gives back the record we've just created with the INSERT statement.
 
     const sql = `
