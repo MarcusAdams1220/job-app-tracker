@@ -13,7 +13,6 @@ const Job = {
     // RETURNING * gives back the record we've just created with the INSERT statement.
 
     const sql = `
-
       INSERT INTO jobs(  
         position_title,
         job_url,
@@ -35,7 +34,6 @@ const Job = {
 
       RETURNING *
     `
-
     return db
       .query(sql, [position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob])
       .then(dbRes => dbRes.rows[0])

@@ -36,7 +36,7 @@ function renderAddJob() {
 
         <fieldset>
           <label for="">Contact Phone Number:</label>
-          <input type="text" name="contactPhoneNumber" placeholder="Contact Phone Number">
+          <input type="text" name="contactPhone" placeholder="Contact Phone Number">
         </fieldset>
 
         <fieldset>
