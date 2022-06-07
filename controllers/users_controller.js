@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
   const { name, email, password } = req.body
   const passwordDigest = bcrypt.hashSync(password, bcrypt.genSaltSync(10), null)
 
-  if (name.length < 8) {
+  if (name.length < 0) {
     res.status(400).json({ message: 'name must be at least 8 characters'})
   } else {
   User
