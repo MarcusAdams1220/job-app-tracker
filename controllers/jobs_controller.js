@@ -13,11 +13,10 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  const {position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob} = req.body
-
   Job
     .create(position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob)
     .then((job) => res.json(job));
+   
 });
 
 router.delete("/:id", (req, res) => {

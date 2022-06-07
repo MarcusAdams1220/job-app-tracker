@@ -17,25 +17,24 @@ function renderJobs() {
   return state.jobs.map(job => `
   <section class="job" data-id="${job.id}">
     <header>
-      <h2>${job.name}</h2>
+      <h2>${job.position}</h2>
       <span onClick="deleteJob(event)" >Delete</span>
     </header>
-    <p>Job Title: ${job.title}</p>
-    <p>Job Type: ${job.type}</p>
+    <p>Job Type: ${job.typeOfEmployment}</p>
     <p>Salary: ${job.salary}</p>
-    <p>Job Link: ${job.url}</p>
+    <p>Job Link: ${job.jobAdURL}</p>
     <p>Closing Date: ${job.closingDate}</p>
     <p>Company Name: ${job.companyName}</p>
-    <p>Company Website: ${job.companyUrl}</p>
+    <p>Company Website: ${job.companyURL}</p>
     <p>Contact Person: ${job.contactPerson}</p>
     <p>Contact Phone Number: ${job.contactPhone}</p>
     <p>Contact Email: ${job.contactEmail}</p>
-    <p>Notes: ${job.notes}</p>
-    <p>Job Ad Screenshot: ${job.screenShot}</p>
+    <p>Notes: ${job.notesAboutCompany}</p>
+    <p>Job Ad Screenshot: ${job.jobAdScreenshot}</p>
     <p>Date Applied: ${job.dateApplied}</p>
     <p>Upcoming Interview: ${upcomingOrNot(job.upcomingInterview)}</p>
     <p>Completed Interview: ${completedOrNot(job.completedInterview)}</p>
-    <p>Received Job Offer: ${receivedOrNot(job.jobOffer)}</p>
+    <p>Received Job Offer: ${receivedOrNot(job.receivedJob)}</p>
   </section>
   `).join('')
 }
