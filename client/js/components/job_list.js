@@ -14,6 +14,9 @@ function renderJobList() {
 }
 
 function renderJobs() {
+  console.log(state.jobs.salary)
+  console.log(state.jobs.position)
+  console.log(state)
   return state.jobs.map(job => `
   <section class="job" data-id="${job.id}">
     <header>
