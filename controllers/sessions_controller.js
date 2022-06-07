@@ -59,13 +59,4 @@ router.post("/", (req, res) => {
 //     window.location = "/"
 // })
 
-// // to get flashcard data
-// router.get('/', (req, res) => {
-//     if (!req.session) {
-//         res.json({ "message": "No one is logged in" })
-//     } else {
-//         res.json(req.session)
-//     }
-// })
-
 module.exports = router
