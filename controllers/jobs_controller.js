@@ -2,14 +2,14 @@ const express = require("express")
 const router = express.Router()
 
 //models
-const Job = require("../models/job");
+const Job = require("../models/job")
 
 //routes
 //make a request to that end point, then we call the method findAll(), then we make the sql query, then we get the datbase response
 router.get("/", (req, res) => {
   Job
   .findAll()
-  .then((jobs) => res.json(jobs));
+  .then((jobs) => res.json(jobs))
 });
 
 router.post("/", (req, res) => {
