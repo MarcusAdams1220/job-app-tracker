@@ -66,10 +66,10 @@ const Job = {
     date_applied = $14,
     upcoming_interview = $15,
     completed_interview = $16,
-    received_job_offer = $17 WHERE id = $18`, [userId, position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob, id]
+    received_job_offer = $17 WHERE id = $18`
 
-    return db.query(sql, [userId, position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob])
-    .then()
+    return db.query(sql, [userId, position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob, id])
+    .then(dbRes => dbRes.rows)
   },
   
 
