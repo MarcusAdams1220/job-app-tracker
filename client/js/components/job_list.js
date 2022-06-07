@@ -39,7 +39,7 @@ function renderJobs() {
   `).join('')
 }
 
-function deleteJobs(event) {
+function deleteJob(event) {
   const deleteBtn = event.target
   const jobDOM = deleteBtn.closest('.job')
   const jobId = jobDOM.dataset.id
