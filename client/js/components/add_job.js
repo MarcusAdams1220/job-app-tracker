@@ -74,7 +74,7 @@ function renderAddJob() {
           <select name="upcomingInterview">
             <option value="no">No</option>
             <option value="yes">Yes</option>
-          </select
+          </select>
         </fieldset>
 
         <fieldset>
@@ -82,7 +82,7 @@ function renderAddJob() {
           <select name="completedInterview">
             <option value="no">No</option>
             <option value="yes">Yes</option>
-          </select
+          </select>
         </fieldset>
 
         <fieldset>
@@ -90,7 +90,7 @@ function renderAddJob() {
           <select name="receivedJobOffer">
             <option value="no">No</option>
             <option value="yes">Yes</option>
-          </select
+          </select>
         </fieldset>
 
         <button>Add Job</button>
