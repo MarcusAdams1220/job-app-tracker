@@ -1,6 +1,6 @@
 function logout() {
-    state.loggedInUserName = null
-    state.sessionId = null
-    renderUsersButton()
+    state.loggedInUserName = null;
+    state.sessionId = null;
+    renderUsersButton();
     renderJobListEmpty()
 }
