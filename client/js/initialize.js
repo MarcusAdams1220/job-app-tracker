@@ -5,7 +5,9 @@ const state = {
 fetch('/api/jobs')
   .then(res => res.json())
   .then(jobs => {
-    state.jobs = jobs
+    state.jobs
     renderUsersButton()
   })
+
+
 
