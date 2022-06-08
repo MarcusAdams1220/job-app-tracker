@@ -25,8 +25,9 @@ const User = {
         // console.log(dbRes.rows[0])
             return dbRes.rows[0];
         });
-  }
+  },
 }
+
 
 
 
