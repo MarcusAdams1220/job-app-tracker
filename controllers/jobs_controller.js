@@ -46,8 +46,3 @@ router.delete("/:id", (req, res) => {
 })
 
 module.exports = router;
-
-
-function renderEditJob() {
-  document.querySelector('#').innerHTML = 
-}
