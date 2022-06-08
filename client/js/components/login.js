@@ -13,6 +13,8 @@ function login(event) {
     state.loggedInUserName = user.userName
     state.sessionId = user.sessionId
     
+    console.log(user.errorMessage)
+
     if(state.sessionId > 0) {
       document.querySelector('.nav-list').innerHTML =`
       <li class="material-icons add-job" onClick="renderAddJob()">add_circle</li>
@@ -26,8 +28,8 @@ function login(event) {
         })
     } else {
       renderLogin()
-      const errorMessage = document.createElement('p').innerText = 'User not found'
-      document.querySelector('#page').append(errorMessage)
+      const message = document.createElement('p').innerText = user.errorMessage
+      document.querySelector('#page').append(message)
     }
   })
 }

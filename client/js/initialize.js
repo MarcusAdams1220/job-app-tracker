@@ -1,7 +1,3 @@
 const state = {
   jobs: []
 }
-
-
-
-renderUsersButton()
