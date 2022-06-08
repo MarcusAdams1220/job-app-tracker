@@ -7,9 +7,11 @@ const Job = require("../models/job")
 //routes
 //make a request to that end point, then we call the method findAll(), then we make the sql query, then we get the datbase response
 router.get("/", (req, res) => {
+  
   Job
   .findAll()
   .then((jobs) => res.json(jobs))
+  // .then(console.log(state))
 });
 
 router.post("/:id", (req, res) => {
@@ -18,7 +20,7 @@ router.post("/:id", (req, res) => {
   const userId = req.params.id
 
   Job
-    .create(userId,position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhone, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob)
+    .create(userId, position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhone, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob)
     .then(console.log(position))
     .then(job => res.json(job));
    
