@@ -13,14 +13,15 @@ router.post("/", (req, res) => {
     .then((user) => {
     
     if (user === undefined) {
-      res.json({})
+      res.json({errorMessage: 'Email does not exist'})
     } else if (user) {
       const isValidPassword = bcrypt.compareSync(password, user.password_digest)
       if (user && isValidPassword) {
         req.session.userId = user.id;
         res.json({userName: user.name, sessionId: req.session.userId})
+      } else {
+        res.json({errorMessage: 'Password is incorrect'})
       }
-
     }
   })
 })
