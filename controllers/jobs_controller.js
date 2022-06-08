@@ -9,8 +9,9 @@ const Job = require("../models/job")
 router.get("/", (req, res) => {
   
   Job
-  .findJobsByUserId(req.session.userId)
+  .findAll()
   .then((jobs) => res.json(jobs))
+  // .then(console.log(state))
 });
 
 router.post("/:id", (req, res) => {
@@ -43,8 +44,3 @@ router.delete("/:id", (req, res) => {
 })
 
 module.exports = router;
-
-
-function renderEditJob() {
-  document.querySelector('#').innerHTML = 
-}
