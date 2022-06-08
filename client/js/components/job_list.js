@@ -13,6 +13,11 @@ function renderJobList() {
   `
 }
 
+function renderJobListEmpty() {
+  document.querySelector('#page').innerHTML = `
+  `
+}
+
 function renderJobs() {
   return state.jobs.map(job => `
   <section class="job" data-id="${job.id}">
