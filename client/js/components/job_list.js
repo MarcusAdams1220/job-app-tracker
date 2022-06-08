@@ -95,33 +95,36 @@ function updateJobs(event) {
   event.preventDefault()
   const form  = event.target
   const data = Object.fromEntries(new FormData(form))
-  const userId = state.sessionId
+  console.log(data)
+  const jobDOM = form.closest('.job')
+  const jobId = jobDOM.dataset.id
+  console.log(jobId)
   
-  fetch(`/api/jobs/${userId}`, {
+  fetch(`/api/jobs/${jobId}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   })
   .then(res => res.json())
-  .then(job => {
-    let currentJob = state.jobs.filter(t => t.id == jobId)[0]
-    currentJob.position_title = job.position_title
-    currentJob.type_of_employment = job.type_of_employment
-    currentJob.salary = job.salary
-    currentJob.job_url = job.job_url
-    currentJob.closing_date = job.closing_date
-    currentJob.company_name = job.company_name
-    currentJob.company_url = job.company_url
-    currentJob.contact_person = job.contact_person
-    currentJob.contact_phone = job.contact_phone
-    currentJob.contact_email = job.contact_email
-    currentJob.notes_about_company = job.notes_about_company
-    currentJob.job_advertisement_screen_shot = job.job_advertisement_screen_shot
-    currentJob.date_applied = job.date_applied
-    // currentJob.upcoming_interview = job.upcoming_interview
-    // currentJob.completed_interview = job.completed_interview
-    // currentJob.received_job_offer = job.received_job_offer
-
+  .then(() => {
+    const currentJob = state.jobs.filter(t => t.id == jobId)[0]
+    console.log(currentJob)
+    currentJob.position_title = data.position
+    currentJob.type_of_employment = data.typeOfEmployment
+    currentJob.salary = data.salary
+    currentJob.job_url = data.jobAdURL
+    currentJob.closing_date = data.closingDate
+    currentJob.company_name = data.companyName
+    currentJob.company_url = data.companyURL
+    currentJob.contact_person = data.contactPerson
+    currentJob.contact_phone = data.contactPhone
+    currentJob.contact_email = data.contactEmail
+    currentJob.notes_about_company = data.notesAboutCompany
+    currentJob.job_advertisement_screen_shot = data.jobADScreenshot
+    currentJob.date_applied = data.dateApplied
+    currentJob.upcoming_interview = data.upcomingInterview
+    currentJob.completed_interview = data.completedInterview
+    currentJob.received_job_offer = data.receivedJobOffer
     renderJobList()
   })
 }
@@ -130,7 +133,6 @@ function updateJobs(event) {
 function deleteJob(event) {
   const deleteBtn = event.target
   const jobDOM = deleteBtn.closest('.job')
-  console.log(`${jobDOM}`)
   const jobId = jobDOM.dataset.id
   fetch(`/api/jobs/${jobId}`, {
     method: 'DELETE',

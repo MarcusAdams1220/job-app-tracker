@@ -48,35 +48,30 @@ const Job = {
       .then(dbRes => dbRes.rows[0])
   },
 
-  findJobByEditId: (editId) => {
-    const sql = 'SELECT * FROM jobs WHERE id = $1'
-
-    return db
-      .query(sql, [editId])
-      .then(dbRes => dbRes.rows[0])
-  },
-
-  update: (id, userId, position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob) => {
+  update: (id, position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob) => {
     const sql = `
-    UPDATE jobs SET user_id = $1,
-    position_title = $2,
-    job_url = $3,
-    closing_date = $4,
-    company_name = $5,
-    company_url = $6,
-    contact_person = $7,
-    contact_phone = $8,
-    contact_email = $9,
-    type_of_employment = $ 10,
-    salary = $11,
-    notes_about_company = $12,
-    job_advertisement_screen_shot = $13,
-    date_applied = $14,
-    upcoming_interview = $15,
-    completed_interview = $16,
-    received_job_offer = $17 WHERE id = $18`
+    UPDATE jobs SET
+    position_title = $1,
+    job_url = $2,
+    closing_date = $3,
+    company_name = $4,
+    company_url = $5,
+    contact_person = $6,
+    contact_phone = $7,
+    contact_email = $8,
+    type_of_employment = $9,
+    salary = $10,
+    notes_about_company = $11,
+    job_advertisement_screen_shot = $12,
+    date_applied = $13,
+    upcoming_interview = $14,
+    completed_interview = $15,
+    received_job_offer = $16 WHERE id = $17
+    `
     
-    return db.query(sql, [userId, position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob, id])
+    return db.query(sql, [position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob, id])
+    .then(console.log(`${salary}`))
+    .then(console.log(`${id}`))
     .then(dbRes => dbRes.rows)
   },
   
