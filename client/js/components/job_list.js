@@ -6,7 +6,7 @@ function renderUsersButton() {
 
 function renderJobList() {
   document.querySelector('#page').innerHTML = `
-  <section class="job-list">
+  <section class="josb-list">
     ${renderJobs()}
 
   </section>
