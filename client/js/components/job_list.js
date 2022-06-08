@@ -1,3 +1,9 @@
+function renderUsersButton() {
+  document.querySelector('.nav-list').innerHTML = `      <li class="material-icons sign-up" onClick="renderSignUp()">person_add</li>
+  <li class="material-icons login" onClick="renderLogin()">login</li>
+  `
+}
+
 function renderJobList() {
   document.querySelector('#page').innerHTML = `
   <section class="job-list">
@@ -40,42 +46,46 @@ function renderJobs() {
   `).join('')
 }
 
-function renderEditJob(event) {
+function renderEditJob(event) {     
   const editBtn = event.target
   const jobDOM = editBtn.closest('.job')
-  console.log(`${jobDOM}`)
-  console.log(`${jobDOM.dataset.id}`)
-  document.querySelector('').innerHTML = 
+  console.log(`${jobDOM.dataset}`)
+  const jobId = jobDOM.dataset.id
+  let currentJob = state.jobs.filter(t => t.id === jobId)
+  console.log(currentJob)
+
+  document.querySelector('#page').innerHTML = 
   `
     <section class="job" data-id="${jobDOM.dataset.id}">
       <form onSubmit="updateJobs(event)">
         <header>
-          <input type="text" name="position" placeholder=${jobDOM.dataset.position_title}>
+          <p>Position: </p>
+          <input type="text" name="position" value=${jobDOM.dataset.position_title}>
         </header>
 
-        <p>Job Type: </p> <input type="text" name="typeOfEmployment" placeholder=${jobDOM.dataset.type_of_employment}>
+        <p>Job Type: </p> <input type="text" name="typeOfEmployment" value=${jobDOM.dataset.type_of_employment}>
 
-        <p>Salary: </p> <input type="text" name="salary" placeholder=${jobDOM.dataset.salary}> 
+        <p>Salary: </p> <input type="text" name="salary" value=${jobDOM.dataset.salary}> 
 
-        <p>Job Link: </p> <input type="text" name="jobAdURL" placeholder=${jobDOM.dataset.job_url}> 
+        <p>Job Link: </p> <input type="text" name="jobAdURL" value=${jobDOM.dataset.job_url}> 
 
-        <p>Closing Date: </p> <input type="text" name="closingDate" placeholder="${jobDOM.dataset.closing_date}">
+        <p>Closing Date: </p> <input type="text" name="closingDate" value="${jobDOM.dataset.closing_date}">
 
-        <p>Company Name: </p> <input type="text" name="CompanyName" placeholder="${jobDOM.dataset.company_name}">
+        <p>Company Name: </p> <input type="text" name="CompanyName" value="${jobDOM.dataset.company_name}">
 
-        <p>Company Website: </p> <input type="text" name="CompanyName" placeholder="${jobDOM.dataset.company_url}">
+        <p>Company Website: </p> <input type="text" name="CompanyName" value="${jobDOM.dataset.company_url}">
 
-        <p>Contact Person: </p> <input type="text" name="contactPerson" placeholder="${jobDOM.dataset.contact_person}">
+        <p>Contact Person: </p> <input type="text" name="contactPerson" value="${jobDOM.dataset.contact_person}">
 
-        <p>Contact Phone Number: </p> <input type="text" name="contactPhone" placeholder="${jobDOM.dataset.contact_phone}">
+        <p>Contact Phone Number: </p> <input type="text" name="contactPhone" value="${jobDOM.dataset.contact_phone}">
 
-        <p>Contact Email: </p> <input type="text" name="contactEmail" placeholder="${jobDOM.dataset.contact_email}">
+        <p>Contact Email: </p> <input type="text" name="contactEmail" value="${jobDOM.dataset.contact_email}">
 
-        <p>Notes: </p> <input type="text" name="notesAboutCompany" placeholder="${jobDOM.dataset.notes_about_company}">
+        <p>Notes: </p> <input type="text" name="notesAboutCompany" value="${jobDOM.dataset.notes_about_company}">
 
-        <p>Job Ad Screenshot: </p> <input type="text" name="notesAboutCompany" placeholder="${jobDOM.dataset.notes_about_company}">
+        <p>Job Ad Screenshot: </p> <input type="text" name="notesAboutCompany" value="${jobDOM.dataset.notes_about_company}">
 
-        <p>Date Applied: <input type="text" name="dateApplied" placeholder="${jobDOM.dataset.date_applied}">
+        <p>Date Applied: <input type="text" name="dateApplied" value="${jobDOM.dataset.date_applied}">
 
         <button>Done</button>
       </form>
