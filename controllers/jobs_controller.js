@@ -25,6 +25,10 @@ router.post("/:id", (req, res) => {
    
 });
 
+router.update("/:id", (req, res) => {
+  
+})
+
 router.delete("/:id", (req, res) => {
   const jobId = req.params.id
 
