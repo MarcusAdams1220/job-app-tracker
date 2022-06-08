@@ -16,7 +16,8 @@ function renderLogin() {
     </form>
   </section>
 `
-  document.querySelector('.nav-list').innerHTML = `      <li class="material-icons sign-up" onClick="renderSignUp()">person_add</li>
+  document.querySelector('.nav-list').innerHTML = `
+  <li class="material-icons sign-up" onClick="renderSignUp()">person_add</li>
   <li class="material-icons login" onClick="renderLogin()">login</li>
   `
 }
