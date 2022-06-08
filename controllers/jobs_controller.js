@@ -27,6 +27,7 @@ router.post("/:id", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
+<<<<<<< HEAD
   const id = req.params.id
   const {position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhone, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob} = req.body
 
@@ -34,6 +35,13 @@ router.put("/:id", (req, res) => {
     .update(id, position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhone, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob)
     .then(console.log(`${salary}`))
     .then(console.log(`${id}`))
+=======
+  const {id, userId, position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhone, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob,} = req.body
+
+  Job
+    .update(id, userId, position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhone, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob)
+    .then(console.log(salary))
+>>>>>>> 99f5843 (change)
     .then(job => res.json(job));
 })
 
@@ -46,3 +54,8 @@ router.delete("/:id", (req, res) => {
 })
 
 module.exports = router;
+
+
+function renderEditJob() {
+  document.querySelector('#').innerHTML = 
+}
