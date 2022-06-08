@@ -46,42 +46,44 @@ function renderJobs() {
   `).join('')
 }
 
-function renderEditJob(event) {
+function renderEditJob(event) {     
   const editBtn = event.target
   const jobDOM = editBtn.closest('.job')
-  console.log(`${jobDOM}`)
-  console.log(`${jobDOM.dataset.id}`)
-  document.querySelector('').innerHTML = 
+  const jobId = jobDOM.dataset.id
+  let currentJob = state.jobs.filter(t => t.id == jobId)[0]
+
+  document.querySelector('#page').innerHTML = 
   `
-    <section class="job" data-id="${jobDOM.dataset.id}">
+    <section class="job" data-id="${currentJob.id}">
       <form onSubmit="updateJobs(event)">
         <header>
-          <input type="text" name="position" placeholder=${jobDOM.dataset.position_title}>
+          <p>Position: </p>
+          <input type="text" name="position" value=${currentJob.position_title}>
         </header>
 
-        <p>Job Type: </p> <input type="text" name="typeOfEmployment" placeholder=${jobDOM.dataset.type_of_employment}>
+        <p>Job Type: </p> <input type="text" name="typeOfEmployment" value=${currentJob.type_of_employment}>
 
-        <p>Salary: </p> <input type="text" name="salary" placeholder=${jobDOM.dataset.salary}> 
+        <p>Salary: </p> <input type="text" name="salary" value=${currentJob.salary}> 
 
-        <p>Job Link: </p> <input type="text" name="jobAdURL" placeholder=${jobDOM.dataset.job_url}> 
+        <p>Job Link: </p> <input type="text" name="jobAdURL" value=${currentJob.job_url}> 
 
-        <p>Closing Date: </p> <input type="text" name="closingDate" placeholder="${jobDOM.dataset.closing_date}">
+        <p>Closing Date: </p> <input type="text" name="closingDate" value="${currentJob.closing_date}">
 
-        <p>Company Name: </p> <input type="text" name="CompanyName" placeholder="${jobDOM.dataset.company_name}">
+        <p>Company Name: </p> <input type="text" name="CompanyName" value="${currentJob.company_name}">
 
-        <p>Company Website: </p> <input type="text" name="CompanyName" placeholder="${jobDOM.dataset.company_url}">
+        <p>Company Website: </p> <input type="text" name="CompanyName" value="${currentJob.company_url}">
 
-        <p>Contact Person: </p> <input type="text" name="contactPerson" placeholder="${jobDOM.dataset.contact_person}">
+        <p>Contact Person: </p> <input type="text" name="contactPerson" value="${currentJob.contact_person}">
 
-        <p>Contact Phone Number: </p> <input type="text" name="contactPhone" placeholder="${jobDOM.dataset.contact_phone}">
+        <p>Contact Phone Number: </p> <input type="text" name="contactPhone" value="${currentJob.contact_phone}">
 
-        <p>Contact Email: </p> <input type="text" name="contactEmail" placeholder="${jobDOM.dataset.contact_email}">
+        <p>Contact Email: </p> <input type="text" name="contactEmail" value="${currentJob.contact_email}">
 
-        <p>Notes: </p> <input type="text" name="notesAboutCompany" placeholder="${jobDOM.dataset.notes_about_company}">
+        <p>Notes: </p> <input type="text" name="notesAboutCompany" value="${currentJob.notes_about_company}">
 
-        <p>Job Ad Screenshot: </p> <input type="text" name="notesAboutCompany" placeholder="${jobDOM.dataset.notes_about_company}">
+        <p>Job Ad Screenshot: </p> <input type="text" name="notesAboutCompany" value="${currentJob.notes_about_company}">
 
-        <p>Date Applied: <input type="text" name="dateApplied" placeholder="${jobDOM.dataset.date_applied}">
+        <p>Date Applied: <input type="text" name="dateApplied" value="${currentJob.date_applied}">
 
         <button>Done</button>
       </form>
@@ -92,17 +94,17 @@ function renderEditJob(event) {
 function updateJobs(event) {
   event.preventDefault()
   const form  = event.target
-  const jobId = form.dataset.id
   const data = Object.fromEntries(new FormData(form))
-
-  fetch(`/api/jobs/${jobId}`, {
+  const userId = state.sessionId
+  
+  fetch(`/api/jobs/${userId}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   })
   .then(res => res.json())
   .then(job => {
-    let currentJob = state.jobs.filter(t => t.id === jobId)
+    let currentJob = state.jobs.filter(t => t.id == jobId)[0]
     currentJob.position_title = job.position_title
     currentJob.type_of_employment = job.type_of_employment
     currentJob.salary = job.salary

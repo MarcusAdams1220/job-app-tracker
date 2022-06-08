@@ -48,6 +48,14 @@ const Job = {
       .then(dbRes => dbRes.rows[0])
   },
 
+  findJobByEditId: (editId) => {
+    const sql = 'SELECT * FROM jobs WHERE id = $1'
+
+    return db
+      .query(sql, [editId])
+      .then(dbRes => dbRes.rows[0])
+  },
+
   update: (id, userId, position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob) => {
     const sql = `
     UPDATE jobs SET user_id = $1,

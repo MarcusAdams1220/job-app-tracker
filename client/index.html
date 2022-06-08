@@ -13,7 +13,9 @@
   <link rel="stylesheet" href="/css/navigation.css">
   <link rel="stylesheet" href="/css/jobs.css">
 
+
   <script src="/js/initialize.js"></script>
+  <script src="/js/components/nav.js" defer></script>
   <script src="/js/components/add_job.js" defer></script>
   <script src="/js/components/job_list.js" defer></script>
   <script src="/js/components/sign_up.js" defer></script>
@@ -25,7 +27,8 @@
   <h1>Welcome to Your Job Applications</h1>
   <nav class="header-nav">
     <ul class="nav-list">
-
+      <li class="material-icons sign-up" onClick="renderSignUp()">person_add</li>
+      <li class="material-icons login" onClick="renderLogin()">login</li>
     </ul>
   </nav> 
  
