@@ -5,6 +5,7 @@ function logout() {
     body: JSON.stringify(),
   }).then((req, res) => {
     state.loggedInUserName = null;
+    state.sessionId = null;
     renderUsersButton();
   });
 }
