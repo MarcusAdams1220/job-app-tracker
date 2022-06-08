@@ -41,7 +41,10 @@ function renderJobs() {
 }
 
 function renderEditJob(event) {
-  const jobDOM = event.target.closest('.job')
+  const editBtn = event.target
+  const jobDOM = editBtn.closest('.job')
+  console.log(`${jobDOM}`)
+  console.log(`${jobDOM.dataset.id}`)
   document.querySelector('').innerHTML = 
   `
     <section class="job" data-id="${jobDOM.dataset.id}">
