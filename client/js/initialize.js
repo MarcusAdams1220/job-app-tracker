@@ -2,7 +2,12 @@ const state = {
   jobs: []
 }
 
-renderUsersButton()
+fetch('/api/jobs')
+  .then(res => res.json())
+  .then(jobs => {
+    state.jobs
+    renderUsersButton()
+  })
 
 
 

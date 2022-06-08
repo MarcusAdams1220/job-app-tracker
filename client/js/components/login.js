@@ -32,7 +32,6 @@ function login(event) {
   .then(user => {
     state.loggedInUserName = user.userName
     state.sessionId = user.sessionId
-    // renderJobList()
   })
   .then (() => {
     fetch('/api/jobs')
