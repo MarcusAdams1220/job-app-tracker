@@ -9,9 +9,10 @@ const Job = require("../models/job")
 router.get("/", (req, res) => {
   
   Job
-  .findAll()
+  // .findAll()
+  .findByUserId(req.session.userId)
+  // .then(jobs => console.log(res.json(jobs)))
   .then((jobs) => res.json(jobs))
-  // .then(console.log(state))
 });
 
 router.post("/:id", (req, res) => {

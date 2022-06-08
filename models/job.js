@@ -9,6 +9,14 @@ const Job = {
       .then(dbRes => dbRes.rows)
   },
 
+  findJobsByUserId: (userId) => {
+    const sql = 'SELECT * FROM jobs WHERE user_id = $1'
+
+    return db
+      .query(sql, [userId])
+      .then(dbRes => dbRes.rows)
+  },
+
   create: (userId, position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob) => {
     // RETURNING * gives back the record we've just created with the INSERT statement.
 

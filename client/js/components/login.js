@@ -32,7 +32,15 @@ function login(event) {
   .then(user => {
     state.loggedInUserName = user.userName
     state.sessionId = user.sessionId
-    renderJobList()
+    // renderJobList()
+  })
+  .then (() => {
+    fetch('/api/jobs')
+    .then(res => res.json())
+    .then(jobs => {
+      state.jobs = jobs
+      renderJobList()
+  })
   })
   .then(document.querySelector('.nav-list').innerHTML =`
   <li class="material-icons add-job" onClick="renderAddJob()">add_circle</li>
