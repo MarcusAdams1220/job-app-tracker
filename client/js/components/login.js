@@ -41,8 +41,4 @@ function login(event) {
       renderJobList()
   })
   })
-  .then(document.querySelector('.nav-list').innerHTML =`
-  <li class="material-icons add-job" onClick="renderAddJob()">add_circle</li>
-  <li class="material-icons logout" onClick="logout()">logout</li>
-  `)
 }
