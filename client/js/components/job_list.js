@@ -46,14 +46,33 @@ function renderJobs() {
   `).join('')
 }
 
-
-function renderEditJob() {
-  document
-
-
+function renderEditJob(event) {
+  event.preventDefault()
+  const jobDOM = updateBtn.closest('.job')
+  document.querySelector(jobDOM).innerHTML = 
+  `
+    <section class="job" data-id="${jobDOM.dataset.id}">
+      <header>
+        <h2>${job.position_title}</h2>
+      </header>
+      <p>Job Type: ${job.type_of_employment}</p>
+      <p>Salary: ${job.salary}</p>
+      <p>Job Link: ${job.job_url}</p>
+      <p>Closing Date: ${job.closing_date}</p>
+      <p>Company Name: ${job.company_name}</p>
+      <p>Company Website: ${job.company_url}</p>
+      <p>Contact Person: ${job.contact_person}</p>
+      <p>Contact Phone Number: ${job.contact_phone}</p>
+      <p>Contact Email: ${job.contact_email}</p>
+      <p>Notes: ${job.notes_about_company}</p>
+      <p>Job Ad Screenshot: ${job.job_advertisement_screen_shot}</p>
+      <p>Date Applied: ${job.date_applied}</p>
+      <p>Upcoming Interview: ${upcomingOrNot(job.upcoming_interview)}</p>
+      <p>Completed Interview: ${completedOrNot(job.completed_interview)}</p>
+      <p>Received Job Offer: ${receivedOrNot(job.received_job_offer)}</p>
+    </section>
+    `).join('')
 }
-
-
 
 function updateJobs(event) {
   event.preventDefault()
@@ -61,6 +80,7 @@ function updateJobs(event) {
   const updateBtn = event.target
   const jobDOM = updateBtn.closest('.job')
   const jobId = jobDOM.dataset.id
+
   const data = Object.fromEntries(new FormData(form))
 
   fetch(`/api/jobs/${jobId}`, {
