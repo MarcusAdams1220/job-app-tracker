@@ -23,7 +23,9 @@ function renderJobs() {
   <section class="job" data-id="${job.id}">
     <header>
       <h2>${job.position_title}</h2>
-      <span onClick="deleteJob(event)" >Delete</span>
+      <span onClick="deleteJob(event)" 
+      >Delete</span>
+      <span onClick="updateJob(event)">Edit</span>
     </header>
     <p>Job Type: ${job.type_of_employment}</p>
     <p>Salary: ${job.salary}</p>
@@ -43,6 +45,29 @@ function renderJobs() {
   </section>
   `).join('')
 }
+
+
+
+function updateJobs(event) {
+  event.preventDefault()
+  const updateBtn = event.target
+  const jobDOM = updateBtn.closest('.job')
+  const data = Object.fromEntries(new FormData(form))
+  const job = jobDOM.dataset.job
+  fetch(`/api/jobs/${sessionId}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(job => {
+    state.jobs.push(job)
+    renderJobList()
+  })
+}
+
+
+
 
 function deleteJob(event) {
   const deleteBtn = event.target
