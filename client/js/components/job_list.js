@@ -47,7 +47,11 @@ function renderJobs() {
 }
 
 
-function renderEditJob
+function renderEditJob() {
+  document
+
+
+}
 
 
 
