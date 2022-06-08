@@ -14,6 +14,14 @@ router.get("/", (req, res) => {
   // .then(console.log(state))
 });
 
+router.get("/:id", (req, res) => {
+  const jobId = req.params.id
+
+  Job
+  .findJobByEditId(jobId)
+  .then(job => res.json(job))
+})
+
 router.post("/:id", (req, res) => {
   const {position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhone, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob} = req.body
   
