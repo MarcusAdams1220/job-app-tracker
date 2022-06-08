@@ -54,9 +54,15 @@ INSERT INTO jobs(
     'What will Vertic offer me? Training in key areas to help advance your career. Great experience working on interesting projects having an impact in the community. Support from a highly skilled team. A friendly and supportive environment that you will enjoy being involved with.',
     'https://bloghubstaffcom.lightningbasecdn.com/wp-content/uploads/2019/07/clear-job-ad@2x.jpeg',
     '05.06.2022',
+<<<<<<< HEAD
     true, 
     true, 
     false
+=======
+    'true', 
+    'true', 
+    'false'
+>>>>>>> f7edbb0 (dwd)
   ),
 
   (    
@@ -73,9 +79,15 @@ INSERT INTO jobs(
   'Napier & Blakeley is an independent property, development and sustainability consultancy. Since 1985 we have been providing pragmatic and commercially orientated advice covering the imperatives that actually matter. Cost ▪ Risk ▪ Return, reflects our clients'' mandate: how much will it cost, what is the risk, and how can we manage these issues to maximise return.',
   'https://qph.cf2.quoracdn.net/main-qimg-6d0363fd07339274004d386962139d5b',
   'Not Yet',
+<<<<<<< HEAD
   false,
   false,
   false
+=======
+  'false',
+  'false',
+  'false'
+>>>>>>> f7edbb0 (dwd)
   ),
 
   (
@@ -91,9 +103,15 @@ INSERT INTO jobs(
     'At BAE Systems we are all systems go as we continue to drive innovation and seek passionate and talented people to join our business. We currently have a exciting opportunity as a Software Engineer within our DFMS project based in Canberra.',
     'https://pbs.twimg.com/media/EClFBlXXYAA6Ynu.jpg',
     'Not Yet',
+<<<<<<< HEAD
     false,
     false,
     false
+=======
+    'false',
+    'false',
+    'false'
+>>>>>>> f7edbb0 (dwd)
   ),
   
   (
@@ -110,9 +128,15 @@ INSERT INTO jobs(
     'The Lottery Corporation is Australian largest lottery company and one of the best-performing lottery businesses in the world.',
     'https://cdn6.f-cdn.com/contestentries/167809/8154646/54f83b1d8cc2e_thumb900.jpg',
     'Not Yet',
+<<<<<<< HEAD
     false,
     false,
     false),
+=======
+    'false',
+    'false',
+    'false'),
+>>>>>>> f7edbb0 (dwd)
 
   (
     'Software Engineer',
@@ -128,9 +152,15 @@ INSERT INTO jobs(
     'The Lead Software Engineer responsibilities include gathering user requirements, supplier data, defining system functionality and writing code alongside our external providers. Our ideal candidates are familiar with the software development life cycle (SDLC) from preliminary system analysis to tests and deployment and already have experience in the roof rack industry.',
     'https://jobvacancies-lk.s3.ap-southeast-1.amazonaws.com/Recruiter/2016/December/Career-Builders-%28Pvt%29-Ltd/May-2017/JAVA-Middleware-Software-Engineer-1312/Ad-Images/JAVA-Middleware-Software-Engineer.jpg',
     '06.06.2022',
+<<<<<<< HEAD
     true,
     true,
     true);
+=======
+    'true',
+    'true',
+    'true');
+>>>>>>> f7edbb0 (dwd)
 
 
 CREATE TABLE users(
