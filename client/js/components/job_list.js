@@ -47,26 +47,46 @@ function renderJobs() {
 }
 
 
+function renderEditJob
+
+
 
 function updateJobs(event) {
   event.preventDefault()
+ 
   const updateBtn = event.target
   const jobDOM = updateBtn.closest('.job')
+  const jobId = jobDOM.dataset.id
   const data = Object.fromEntries(new FormData(form))
-  const job = jobDOM.dataset.job
-  fetch(`/api/jobs/${sessionId}`, {
+
+  fetch(`/api/jobs/${jobId}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   })
   .then(res => res.json())
   .then(job => {
-    state.jobs.push(job)
+    let currentJob = state.jobs.filter(t => t.id === jobId)
+    currentJob.position_title = job.position_title
+    currentJob.type_of_employment = job.type_of_employment
+    currentJob.salary = job.salary
+    currentJob.job_url = job.job_url
+    currentJob.closing_date = job.closing_date
+    currentJob.company_name = job.company_name
+    currentJob.company_url = job.company_url
+    currentJob.contact_person = job.contact_person
+    currentJob.contact_phone = job.contact_phone
+    currentJob.contact_email = job.contact_email
+    currentJob.notes_about_company = job.notes_about_company
+    currentJob.job_advertisement_screen_shot = job.job_advertisement_screen_shot
+    currentJob.date_applied = job.date_applied
+    currentJob.upcoming_interview = job.upcoming_interview
+    currentJob.completed_interview = job.completed_interview
+    currentJob.received_job_offer = job.received_job_offer
+
     renderJobList()
   })
 }
-
-
 
 
 function deleteJob(event) {
@@ -105,3 +125,4 @@ function receivedOrNot (boolean) {
     return 'Not Yet'
   }
 }
+
