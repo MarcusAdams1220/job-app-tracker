@@ -55,6 +55,7 @@ INSERT INTO jobs(
     'https://bloghubstaffcom.lightningbasecdn.com/wp-content/uploads/2019/07/clear-job-ad@2x.jpeg',
     '05.06.2022',
 <<<<<<< HEAD
+<<<<<<< HEAD
     true, 
     true, 
     false
@@ -63,6 +64,11 @@ INSERT INTO jobs(
     'true', 
     'false'
 >>>>>>> f7edbb0 (dwd)
+=======
+    true, 
+    true, 
+    false
+>>>>>>> c5e7f1b (change)
   ),
 
   (    
@@ -80,6 +86,7 @@ INSERT INTO jobs(
   'https://qph.cf2.quoracdn.net/main-qimg-6d0363fd07339274004d386962139d5b',
   'Not Yet',
 <<<<<<< HEAD
+<<<<<<< HEAD
   false,
   false,
   false
@@ -88,6 +95,11 @@ INSERT INTO jobs(
   'false',
   'false'
 >>>>>>> f7edbb0 (dwd)
+=======
+  false,
+  false,
+  false
+>>>>>>> c5e7f1b (change)
   ),
 
   (
@@ -104,6 +116,7 @@ INSERT INTO jobs(
     'https://pbs.twimg.com/media/EClFBlXXYAA6Ynu.jpg',
     'Not Yet',
 <<<<<<< HEAD
+<<<<<<< HEAD
     false,
     false,
     false
@@ -112,6 +125,11 @@ INSERT INTO jobs(
     'false',
     'false'
 >>>>>>> f7edbb0 (dwd)
+=======
+    false,
+    false,
+    false
+>>>>>>> c5e7f1b (change)
   ),
   
   (
@@ -129,6 +147,7 @@ INSERT INTO jobs(
     'https://cdn6.f-cdn.com/contestentries/167809/8154646/54f83b1d8cc2e_thumb900.jpg',
     'Not Yet',
 <<<<<<< HEAD
+<<<<<<< HEAD
     false,
     false,
     false),
@@ -137,6 +156,11 @@ INSERT INTO jobs(
     'false',
     'false'),
 >>>>>>> f7edbb0 (dwd)
+=======
+    false,
+    false,
+    false),
+>>>>>>> c5e7f1b (change)
 
   (
     'Software Engineer',
@@ -153,6 +177,7 @@ INSERT INTO jobs(
     'https://jobvacancies-lk.s3.ap-southeast-1.amazonaws.com/Recruiter/2016/December/Career-Builders-%28Pvt%29-Ltd/May-2017/JAVA-Middleware-Software-Engineer-1312/Ad-Images/JAVA-Middleware-Software-Engineer.jpg',
     '06.06.2022',
 <<<<<<< HEAD
+<<<<<<< HEAD
     true,
     true,
     true);
@@ -161,6 +186,11 @@ INSERT INTO jobs(
     'true',
     'true');
 >>>>>>> f7edbb0 (dwd)
+=======
+    true,
+    true,
+    true);
+>>>>>>> c5e7f1b (change)
 
 
 CREATE TABLE users(

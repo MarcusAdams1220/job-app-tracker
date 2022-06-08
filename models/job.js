@@ -50,7 +50,6 @@ const Job = {
 
   update: (id, position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob) => {
     const sql = `
-<<<<<<< HEAD
     UPDATE jobs SET
     position_title = $1,
     job_url = $2,
@@ -73,27 +72,6 @@ const Job = {
     return db.query(sql, [position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob, id])
     .then(console.log(`${salary}`))
     .then(console.log(`${id}`))
-=======
-    UPDATE jobs SET user_id = $1,
-    position_title = $2,
-    job_url = $3,
-    closing_date = $4,
-    company_name = $5,
-    company_url = $6,
-    contact_person = $7,
-    contact_phone = $8,
-    contact_email = $9,
-    type_of_employment = $ 10,
-    salary = $11,
-    notes_about_company = $12,
-    job_advertisement_screen_shot = $13,
-    date_applied = $14,
-    upcoming_interview = $15,
-    completed_interview = $16,
-    received_job_offer = $17 WHERE id = $18`
-
-    return db.query(sql, [userId, position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob, id])
->>>>>>> 2ac0dfe (changes)
     .then(dbRes => dbRes.rows)
   },
   
