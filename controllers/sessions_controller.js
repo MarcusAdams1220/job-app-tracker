@@ -11,6 +11,7 @@ router.post("/", (req, res) => {
   User
     .findByEmail(email)
     .then((user) => {
+    
     if (user === undefined) {
       res.json({})
     } else if (user) {
@@ -19,6 +20,7 @@ router.post("/", (req, res) => {
         req.session.userId = user.id;
         res.json({userName: user.name, sessionId: req.session.userId})
       }
+
     }
   })
 })
