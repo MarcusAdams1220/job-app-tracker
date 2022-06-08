@@ -16,6 +16,11 @@ router.post("/", (req, res) => {
     if (user && isValidPassword) {
       req.session.userId = user.id;
       res.json({userName: user.name, sessionId: req.session.userId})
+      document.querySelector('.nav-list').innerHTML =`
+  <li class="material-icons add-job" onClick="renderAddJob()">add_circle</li>
+  <li class="material-icons logout" onClick="logout()">logout</li>
+  `
+
     }
     }
   })
