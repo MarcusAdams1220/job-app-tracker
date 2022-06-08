@@ -49,22 +49,11 @@ function renderJobs() {
 function renderEditJob(event) {     
   const editBtn = event.target
   const jobDOM = editBtn.closest('.job')
-<<<<<<< HEAD
   console.log(`${jobDOM.dataset}`)
   const jobId = jobDOM.dataset.id
   let currentJob = state.jobs.filter(t => t.id === jobId)
   console.log(currentJob)
 
-=======
-  const jobId = jobDOM.dataset.id
-  const jobArr = Job.findJobByEditId(jobId)
-  console.log(jobArr)
-  // const newJobArr = fetch(`/api/:id`, {
-  //   method: 'GET',
-  // })
-  let currentJob = state.jobs.filter(t => t.id === jobId)
-  console.log(currentJob)
->>>>>>> 17eb053 (fixlogin)
   document.querySelector('#page').innerHTML = 
   `
     <section class="job" data-id="${jobDOM.dataset.id}">
