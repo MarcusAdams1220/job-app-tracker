@@ -154,6 +154,7 @@ function renderJobById(currentJob) {
           <select name="receivedJobOffer">
             <option value="no">No</option>
             <option value="yes" ${selectBoolean(currentJob.received_job_offer)}>Yes</option>
+            
           </select>
         </fieldset>
 
@@ -166,7 +167,6 @@ function renderJobById(currentJob) {
 
 function selectBoolean (boolean) {
   if (boolean) {
-    console.log(boolean)
     return 'selected'
   }
 }
