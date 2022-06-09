@@ -12,6 +12,8 @@ function login(event) {
   .then(user => {
     state.loggedInUserName = user.userName
     state.sessionId = user.sessionId
+
+    document.querySelector('.heading').innerHTML =`Welcome ${state.loggedInUserName} to Your Job Applications`    
     
     if(state.sessionId > 0) {
       renderJobButtons()
