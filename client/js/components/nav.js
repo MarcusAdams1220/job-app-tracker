@@ -1,3 +1,28 @@
+function renderSignUp() {
+  document.querySelector('#page').innerHTML =`
+    <section class="sign-up">
+      <form onSubmit="signUp(event)">
+        <h2>Sign Up</h2>
+        <fieldset>
+          <label for="">Name:</label>
+          <input type="text" name = "name" placeholder="Name">
+        </fieldset>
+
+        <fieldset>
+          <label for="">Email:</label>
+          <input type="text" name = "email" placeholder="Email">
+        </fieldset>
+
+        <fieldset>
+          <label for="">Password:</label>
+          <input type="password" name = "password" placeholder="Password">
+        </fieldset>
+      <button>Sign Up</button>
+    </form>
+  </section>
+`
+}
+
 function renderLogin() {
   document.querySelector('#page').innerHTML =`
     <section class="log-in">
