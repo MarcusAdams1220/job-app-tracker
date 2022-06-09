@@ -88,7 +88,7 @@ function renderEditJob(event) {
         <fieldset>
           <label for="">Upcoming Interview:</label>
           <select name="upcomingInterview">
-            <option value="${currentJob.upcoming_interview}">No</option>
+            <option value="no">No</option>
             <option value="yes">Yes</option>
           </select>
         </fieldset>
@@ -168,7 +168,7 @@ function upcomingOrNot (boolean) {
   if (boolean) {
     return 'Upcoming'
   } else {
-    return 'No Interview'
+    return 'Not Yet'
   }
 }
 
@@ -187,4 +187,5 @@ function receivedOrNot (boolean) {
     return 'Not Yet'
   }
 }
+
 
