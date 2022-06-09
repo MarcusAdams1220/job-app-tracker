@@ -35,7 +35,18 @@ function signUp(event) {
   })
   .then(res => res.json())
   .then(userName => {
-    state.loggedInUserName = userName})
-    .then(() => {renderJobList()
+
+    if (userName.message) {
+      console.log(userName.message)
+      const message = document.createElement('p').innerText = userName.message
+      document.querySelector('#page').append(message)
+      const image = document.createElement('img')
+      image.src = userName.image
+      document.querySelector('#page').append(image)
+    } else {
+      state.loggedInUserName = userName
+      renderJobList()
+    }
+
   })
 }
