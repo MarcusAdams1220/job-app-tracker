@@ -51,3 +51,30 @@ function renderPasswordTooShortError() {
   </section>
   `
 }
+
+function renderUserAlreadyExistsError() {
+  document.querySelector('#page').innerHTML = `
+  <section class="sign-up">
+    <form onSubmit="signUp(event)">
+      <h2>Sign Up</h2>
+      <fieldset>
+        <label for="">Name:</label>
+        <input type="text" name = "name" placeholder="Name">
+      </fieldset>
+
+      <fieldset>
+        <label for="">Email:</label>
+        <input type="text" name = "email" placeholder="Email">
+      </fieldset>
+
+      <fieldset>
+        <label for="">Password:</label>
+        <input type="password" name = "password" placeholder="Password">
+      </fieldset>
+    <button>Sign Up</button>
+    </form>
+    <p>This user already exists. Use a different email.</p>
+    <img src="https://i.kym-cdn.com/entries/icons/mobile/000/023/397/C-658VsXoAo3ovC.jpg">
+  </section>
+  `
+}
