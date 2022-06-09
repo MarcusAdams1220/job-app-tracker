@@ -12,10 +12,7 @@ function updateJobs(event) {
   })
   .then(res => res.json())
   .then(res => { 
-    // console.log(res)
     const currentJob = state.jobs.filter(t => t.id == jobId)[0]
-    console.log(currentJob.position_title)
-    console.log(res.position_title)
     currentJob.position_title = res.position_title
     currentJob.type_of_employment = res.type_of_employment
     currentJob.salary = res.salary
