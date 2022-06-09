@@ -33,33 +33,16 @@ function renderJobs() {
     <p>Notes: ${job.notes_about_company}</p>
     <p>Job Ad Screenshot: ${job.job_advertisement_screen_shot}</p>
     <p>Date Applied: ${job.date_applied}</p>
-    <p>Upcoming Interview: ${upcomingOrNot(job.upcoming_interview)}</p>
-    <p>Completed Interview: ${completedOrNot(job.completed_interview)}</p>
-    <p>Received Job Offer: ${receivedOrNot(job.received_job_offer)}</p>
+    <p>Upcoming Interview: ${optionYesOrNo(job.upcoming_interview)}</p>
+    <p>Completed Interview: ${optionYesOrNo(job.completed_interview)}</p>
+    <p>Received Job Offer: ${optionYesOrNo(job.received_job_offer)}</p>
   </section>
   `).join('')
 }
 
-function upcomingOrNot (value) {
-  if (value == 'true') {
-    console.log(boolean)
-    return 'Upcoming'
-  } else {
-    return 'Not Yet'
-  }
-}
-
-function completedOrNot (value) {
-  if (value == 'true') {
-    return 'Completed'
-  } else {
-    return 'Not Yet'
-  }
-}
-
-function receivedOrNot (value) {
-  if (value == 'true') {
-    return 'Received'
+function optionYesOrNo(boolean) {
+  if (boolean) {
+    return 'Yes'
   } else {
     return 'Not Yet'
   }

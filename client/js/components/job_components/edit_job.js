@@ -11,24 +11,25 @@ function updateJobs(event) {
     body: JSON.stringify(data)
   })
   .then(res => res.json())
-  .then(() => {
+  .then(res => { 
+    console.log(res)
     const currentJob = state.jobs.filter(t => t.id == jobId)[0]
-    currentJob.position_title = data.position
-    currentJob.type_of_employment = data.typeOfEmployment
-    currentJob.salary = data.salary
-    currentJob.job_url = data.jobAdURL
-    currentJob.closing_date = data.closingDate
-    currentJob.company_name = data.companyName
-    currentJob.company_url = data.companyURL
-    currentJob.contact_person = data.contactPerson
-    currentJob.contact_phone = data.contactPhone
-    currentJob.contact_email = data.contactEmail
-    currentJob.notes_about_company = data.notesAboutCompany
-    currentJob.job_advertisement_screen_shot = data.jobAdScreenshot
-    currentJob.date_applied = data.dateApplied
-    currentJob.upcoming_interview = data.upcomingInterview
-    currentJob.completed_interview = data.completedInterview
-    currentJob.received_job_offer = data.receivedJobOffer
+    currentJob.position_title = res.position_title
+    currentJob.type_of_employment = res.type_of_employment
+    currentJob.salary = res.salary
+    currentJob.job_url = res.job_url
+    currentJob.closing_date = res.closing_date
+    currentJob.company_name = res.company_name
+    currentJob.company_url = res.company_url
+    currentJob.contact_person = res.contact_person
+    currentJob.contact_phone = res.contact_phone
+    currentJob.contact_email = res.contact_email
+    currentJob.notes_about_company = res.notes_about_company
+    currentJob.job_advertisement_screen_shot = res.job_advertisement_screen_shot
+    currentJob.date_applied = res.date_applied
+    currentJob.upcoming_interview = res.upcoming_interview
+    currentJob.completed_interview = res.completed_interview
+    currentJob.received_job_offer = res.received_job_offer
     renderJobList()
   })
 }

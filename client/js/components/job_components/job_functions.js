@@ -136,24 +136,24 @@ function renderJobById(currentJob) {
         <fieldset>
           <label for="">Upcoming Interview:</label>
           <select name="upcomingInterview">
-            <option value="yes" ${selectBoolean(currentJob.upcoming_interview)}>Yes</option>
             <option value="no">No</option>
+            <option value="yes" ${selectBoolean(currentJob.upcoming_interview)}>Yes</option>
           </select>
         </fieldset>
 
         <fieldset>
           <label for="">Completed Interview:</label>
           <select name="completedInterview">
-            <option value="yes" ${selectBoolean(currentJob.completed_interview)}>Yes</option>
             <option value="no">No</option>
+            <option value="yes" ${selectBoolean(currentJob.completed_interview)}>Yes</option>
           </select>
         </fieldset>
 
         <fieldset>
           <label for="">Received Job Offer:</label>
           <select name="receivedJobOffer">
-            <option value="yes" ${selectBoolean(currentJob.received_job_offer)}>Yes</option>
             <option value="no">No</option>
+            <option value="yes" ${selectBoolean(currentJob.received_job_offer)}>Yes</option>
             
           </select>
         </fieldset>
