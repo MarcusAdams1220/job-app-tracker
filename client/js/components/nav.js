@@ -52,7 +52,9 @@ function renderUsersButton() {
 
 function renderJobButtons()  {
   document.querySelector('.nav-list').innerHTML =`
+  <li class="material-icons home" onClick="renderJobList()">home</li>
   <li class="material-icons add-job" onClick="renderAddJob()">add_circle</li>
+  <li class="material-icons filter_alt" onClick="renderJobFilterCategories()">filter_alt</li>
   <li class="material-icons logout" onClick="logout()">logout</li>
   `
 }

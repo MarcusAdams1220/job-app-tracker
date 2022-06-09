@@ -36,3 +36,10 @@
   color: rgb(55, 13, 243);
 }
 
+.material-icons.filter_alt {
+  color: green;
+}
+
+.material-icons.home {
+  color: black;
+}
