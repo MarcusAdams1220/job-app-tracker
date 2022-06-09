@@ -14,9 +14,7 @@ function login(event) {
     state.sessionId = user.sessionId
     
     if(state.sessionId > 0) {
-      document.querySelector('.nav-list').innerHTML =`
-      <li class="material-icons add-job" onClick="renderAddJob()">add_circle</li>
-      <li class="material-icons logout" onClick="logout()">logout</li>`
+      renderJobButtons()
 
       fetch('/api/jobs')
         .then(res => res.json())
