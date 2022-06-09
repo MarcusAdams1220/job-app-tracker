@@ -3,4 +3,5 @@ function logout() {
     state.sessionId = null;
     renderUsersButton();
     renderJobListEmpty()
+    renderJobBoards()
 }
