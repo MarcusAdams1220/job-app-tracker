@@ -137,7 +137,7 @@ function renderJobById(currentJob) {
           <label for="">Upcoming Interview:</label>
           <select name="upcomingInterview">
             <option value="no">No</option>
-            <option value="yes">Yes</option>
+            <option value="yes" ${selectBoolean(currentJob.upcoming_interview)}>Yes</option>
           </select>
         </fieldset>
 
@@ -145,7 +145,7 @@ function renderJobById(currentJob) {
           <label for="">Completed Interview:</label>
           <select name="completedInterview">
             <option value="no">No</option>
-            <option value="yes">Yes</option>
+            <option value="yes" ${selectBoolean(currentJob.completed_interview)}>Yes</option>
           </select>
         </fieldset>
 
@@ -153,7 +153,7 @@ function renderJobById(currentJob) {
           <label for="">Received Job Offer:</label>
           <select name="receivedJobOffer">
             <option value="no">No</option>
-            <option value="yes">Yes</option>
+            <option value="yes" ${selectBoolean(currentJob.received_job_offer)}>Yes</option>
           </select>
         </fieldset>
 
@@ -161,4 +161,12 @@ function renderJobById(currentJob) {
       </form>
     </section>
     `
+}
+
+
+function selectBoolean (boolean) {
+  if (boolean) {
+    console.log(boolean)
+    return 'selected'
+  }
 }
