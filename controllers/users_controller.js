@@ -9,9 +9,9 @@ router.post('/', (req, res) => {
   const passwordDigest = bcrypt.hashSync(password, bcrypt.genSaltSync(10), null)
 
   if (name.length < 8) {
-    res.json({ message: 'Name must be at least 8 characters', image: 'https://i.kym-cdn.com/photos/images/newsfeed/000/703/148/ff2.jpg'})
+    res.json({ nameTooShort: true})
   } else if (password.length < 8)  {
-    res.json({ message: 'Password must be at least 8 characters', image:'https://i.kym-cdn.com/photos/images/newsfeed/000/703/148/ff2.jpg'})
+    res.json({ passwordTooShort: true})
   } else {
   User
     .create(name, email, passwordDigest)
