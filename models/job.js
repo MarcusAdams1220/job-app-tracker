@@ -70,8 +70,6 @@ const Job = {
     `
     
     return db.query(sql, [position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhoneNumber, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob, id])
-    .then(console.log(`${salary}`))
-    .then(console.log(`${id}`))
     .then(dbRes => dbRes.rows)
   },
   

@@ -22,7 +22,6 @@ const User = {
     return db
       .query(sql, [email])
       .then(dbRes => {
-        // console.log(dbRes.rows[0])
             return dbRes.rows[0];
         });
   },
