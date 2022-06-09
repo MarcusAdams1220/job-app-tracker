@@ -25,6 +25,19 @@ const User = {
             return dbRes.rows[0];
         });
   },
+
+  findUserIdByEmail: (email) => {
+    const sql = `
+        SELECT id FROM users
+        WHERE email = $1
+    `
+
+    return db
+      .query(sql, [email])
+      .then(dbRes => {
+            return dbRes.rows[0];
+        });
+  },
 }
 
 

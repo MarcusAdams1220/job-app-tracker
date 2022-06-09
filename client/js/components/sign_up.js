@@ -40,7 +40,9 @@ function signUp(event) {
     } else if(user.passwordTooShort) {
       renderPasswordTooShortError()
     } else {
-      state.loggedInUserName = user
+      state.loggedInUserName = userName
+      state.sessionId = user.id
+      console.log(userName)
       renderJobList()
     }
   })
