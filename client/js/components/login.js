@@ -13,8 +13,6 @@ function login(event) {
     state.loggedInUserName = user.userName
     state.sessionId = user.sessionId
     
-    console.log(user.errorMessage)
-
     if(state.sessionId > 0) {
       document.querySelector('.nav-list').innerHTML =`
       <li class="material-icons add-job" onClick="renderAddJob()">add_circle</li>
@@ -29,7 +27,11 @@ function login(event) {
     } else {
       renderLogin()
       const message = document.createElement('p').innerText = user.errorMessage
+      const image = document.createElement('img')
+      image.src = user.errorImage
+      document.querySelector('#page').append(image)
       document.querySelector('#page').append(message)
+      
     }
   })
 }
