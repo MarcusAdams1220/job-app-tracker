@@ -1,10 +1,47 @@
+.job-board-list {
+  display: flex;
+  justify-content: center;
+}
+
+.job-board img {
+  width: 150px;
+  padding-top: 20px;
+}
+
+.job-board li {
+  list-style: none;
+  padding-top: 8px;
+}
+
+.find-jobs {
+  padding-top: 50px;
+}
+
 .job-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));  
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+  justify-content: center;
 }
 
 .job {
-  border: 1px solid rgb(165, 111, 12);
-  padding: 0 1em;
-  box-shadow: 3px 3px 3px rgb(165, 111, 12);
+  margin-top: 10px;
+  background-color: rgb(241, 241, 241);
+  padding: 10px 10px;
+  border-radius: 10px;
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.168);
+  vertical-align: middle;
+}
+
+.job li {
+  list-style: none;
+}
+
+.job span {
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+
+.btn {
+  margin-top: 10px;
 }

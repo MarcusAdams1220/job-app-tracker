@@ -18,9 +18,9 @@ function renderNameTooShortError() {
         <label for="">Password:</label>
         <input type="password" name = "password" placeholder="Password">
       </fieldset>
-    <button>Sign Up</button>
+    <button class="btn btn-success">Sign Up</button>
     </form>
-    <p>Name must be at least 8 characters</p>
+    <p class="error-msg"><br>Name must be at least 8 characters</p>
     <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/703/148/ff2.jpg">
   </section>
   `
@@ -45,9 +45,9 @@ function renderPasswordTooShortError() {
         <label for="">Password:</label>
         <input type="password" name = "password" placeholder="Password">
       </fieldset>
-    <button>Sign Up</button>
+    <button class="btn btn-success">Sign Up</button>
     </form>
-    <p>Password must be at least 8 characters</p>
+    <p class="error-msg"><br>Password must be at least 8 characters</p>
     <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/703/148/ff2.jpg">
   </section>
   `
@@ -72,10 +72,11 @@ function renderUserAlreadyExistsError() {
         <label for="">Password:</label>
         <input type="password" name = "password" placeholder="Password">
       </fieldset>
-    <button>Sign Up</button>
+    <button class="btn btn-success">Sign Up</button>
     </form>
-    <p>This user already exists. Use a different email.</p>
+    <p class="error-msg"><br>This user already exists. Use a different email.</p>
     <img src="https://i.kym-cdn.com/entries/icons/mobile/000/023/397/C-658VsXoAo3ovC.jpg">
   </section>
   `
 }
+

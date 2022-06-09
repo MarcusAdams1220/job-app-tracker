@@ -17,7 +17,7 @@ function renderSignUp() {
           <label for="">Password:</label>
           <input type="password" name = "password" placeholder="Password">
         </fieldset>
-      <button>Sign Up</button>
+      <button class="btn btn-success">Sign Up</button>
     </form>
   </section>
 `
@@ -37,7 +37,7 @@ function renderLogin() {
           <label for="">Password:</label>
           <input type="password" name = "password" placeholder="Password">
         </fieldset>
-      <button>Login</button>
+      <button class="btn btn-success">Login</button>
     </form>
   </section>
 `
@@ -61,23 +61,25 @@ function renderJobButtons()  {
 
 function renderJobBoards() {
   document.querySelector('#page').innerHTML =`
-  <section class="job-list">
-      <section class="job">
-        <ul class="job-board-list">
-          <li><a href="https://au.indeed.com/">Indeed</a></li>
+    <section class="job-board-list">
+      <section class="job-board">
+        <ul>
+          <li><a href="https://au.indeed.com/" target=”_blank” ><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Indeed_logo.png/800px-Indeed_logo.png"></a></li>
         </ul>
       </section>
 
-      <section class="job">
-        <ul class="job-board-list">
-          <li><a href="https://au.jora.com/">Jora</a></li>
+      <section class="job-board">
+        <ul>
+          <li><a href="https://au.jora.com/" target=”_blank” ><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Jora.png"></a></li>
         </ul>
       </section>
       
-      <section class="job">
-        <ul class="job-board-list">
-          <li><a href="https://www.seek.com.au/">Seek</a></li>
+      <section class="job-board">
+        <ul>
+          <li><a href="https://www.seek.com.au/" target=”_blank” ><img src="https://www.bullhorn.com/wp-content/uploads/2021/06/Seek_com_au_logo.png"></a></li>
         </ul>
       </section>
+
+    </section>
       `
 }
