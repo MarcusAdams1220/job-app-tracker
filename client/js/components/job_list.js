@@ -69,9 +69,9 @@ function renderEditJob(event) {
 
         <p>Closing Date: </p> <input type="text" name="closingDate" value="${currentJob.closing_date}">
 
-        <p>Company Name: </p> <input type="text" name="CompanyName" value="${currentJob.company_name}">
+        <p>Company Name: </p> <input type="text" name="companyName" value="${currentJob.company_name}">
 
-        <p>Company Website: </p> <input type="text" name="CompanyName" value="${currentJob.company_url}">
+        <p>Company Website: </p> <input type="text" name="companyURL" value="${currentJob.company_url}">
 
         <p>Contact Person: </p> <input type="text" name="contactPerson" value="${currentJob.contact_person}">
 
@@ -81,7 +81,7 @@ function renderEditJob(event) {
 
         <p>Notes: </p> <input type="text" name="notesAboutCompany" value="${currentJob.notes_about_company}">
 
-        <p>Job Ad Screenshot: </p> <input type="text" name="notesAboutCompany" value="${currentJob.notes_about_company}">
+        <p>Job Ad Screenshot: </p> <input type="text" name="notesjobAdScreenshot" value="${currentJob.job_advertisement_screen_shot}">
 
         <p>Date Applied: <input type="text" name="dateApplied" value="${currentJob.date_applied}">
 
