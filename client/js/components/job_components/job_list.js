@@ -40,24 +40,25 @@ function renderJobs() {
   `).join('')
 }
 
-function upcomingOrNot (boolean) {
-  if (boolean) {
+function upcomingOrNot (value) {
+  if (value == 'true') {
+    console.log(boolean)
     return 'Upcoming'
   } else {
     return 'Not Yet'
   }
 }
 
-function completedOrNot (boolean) {
-  if (boolean) {
+function completedOrNot (value) {
+  if (value == 'true') {
     return 'Completed'
   } else {
     return 'Not Yet'
   }
 }
 
-function receivedOrNot (boolean) {
-  if (boolean) {
+function receivedOrNot (value) {
+  if (value == 'true') {
     return 'Received'
   } else {
     return 'Not Yet'
