@@ -35,7 +35,6 @@ function signUp(event) {
   })
   .then(res => res.json())
   .then(userName => {
-
     if (userName.message) {
       console.log(userName.message)
       const message = document.createElement('p').innerText = userName.message
@@ -47,6 +46,5 @@ function signUp(event) {
       state.loggedInUserName = userName
       renderJobList()
     }
-
   })
 }
