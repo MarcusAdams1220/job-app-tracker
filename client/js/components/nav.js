@@ -58,3 +58,26 @@ function renderJobButtons()  {
   <li class="material-icons logout" onClick="logout()">logout</li>
   `
 }
+
+function renderJobBoards() {
+  document.querySelector('#page').innerHTML =`
+  <section class="job-list">
+      <section class="job">
+        <ul class="job-board-list">
+          <li><a href="https://au.indeed.com/">Indeed</a></li>
+        </ul>
+      </section>
+
+      <section class="job">
+        <ul class="job-board-list">
+          <li><a href="https://au.jora.com/">Jora</a></li>
+        </ul>
+      </section>
+      
+      <section class="job">
+        <ul class="job-board-list">
+          <li><a href="https://www.seek.com.au/">Seek</a></li>
+        </ul>
+      </section>
+      `
+}
