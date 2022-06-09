@@ -81,9 +81,33 @@ function renderEditJob(event) {
 
         <p>Notes: </p> <input type="text" name="notesAboutCompany" value="${currentJob.notes_about_company}">
 
-        <p>Job Ad Screenshot: </p> <input type="text" name="notesjobAdScreenshot" value="${currentJob.job_advertisement_screen_shot}">
+        <p>Job Ad Screenshot: </p> <input type="text" name="jobAdScreenshot" value="${currentJob.job_advertisement_screen_shot}">
 
         <p>Date Applied: <input type="text" name="dateApplied" value="${currentJob.date_applied}">
+
+        <fieldset>
+          <label for="">Upcoming Interview:</label>
+          <select name="upcomingInterview">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <label for="">Completed Interview:</label>
+          <select name="completedInterview">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <label for="">Received Job Offer:</label>
+          <select name="receivedJobOffer">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
+        </fieldset>
 
         <button>Done</button>
       </form>
@@ -117,7 +141,7 @@ function updateJobs(event) {
     currentJob.contact_phone = data.contactPhone
     currentJob.contact_email = data.contactEmail
     currentJob.notes_about_company = data.notesAboutCompany
-    currentJob.job_advertisement_screen_shot = data.jobADScreenshot
+    currentJob.job_advertisement_screen_shot = data.jobAdScreenshot
     currentJob.date_applied = data.dateApplied
     currentJob.upcoming_interview = data.upcomingInterview
     currentJob.completed_interview = data.completedInterview
@@ -144,7 +168,7 @@ function upcomingOrNot (boolean) {
   if (boolean) {
     return 'Upcoming'
   } else {
-    return 'No Interview'
+    return 'Not Yet'
   }
 }
 
@@ -163,4 +187,5 @@ function receivedOrNot (boolean) {
     return 'Not Yet'
   }
 }
+
 
