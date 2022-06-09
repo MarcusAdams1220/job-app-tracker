@@ -1,3 +1,4 @@
+
 function renderNameTooShortError() {
   document.querySelector('#page').innerHTML = `
   <section class="sign-up">
