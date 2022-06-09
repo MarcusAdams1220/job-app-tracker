@@ -4,4 +4,5 @@ function logout() {
     renderUsersButton();
     renderJobListEmpty()
     renderJobBoards()
+    document.querySelector('.heading').innerHTML =`Please Login to Access Your Job Applications`  
 }
