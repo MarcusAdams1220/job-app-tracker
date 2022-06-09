@@ -145,4 +145,3 @@ CREATE TABLE users(
 SELECT * FROM jobs;
 DROP TABLE jobs;
 DROP TABLE users;
-
