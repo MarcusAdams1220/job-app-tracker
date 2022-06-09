@@ -11,7 +11,6 @@ router.get("/", (req, res) => {
   Job
   .findJobsByUserId(req.session.userId)
   .then((jobs) => res.json(jobs))
-  // .then(console.log(state))
 });
 
 router.post("/:id", (req, res) => {
@@ -21,7 +20,6 @@ router.post("/:id", (req, res) => {
 
   Job
     .create(userId, position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhone, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob)
-    .then(console.log(position))
     .then(job => res.json(job));
    
 });
@@ -32,8 +30,6 @@ router.put("/:id", (req, res) => {
 
   Job
     .update(id, position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhone, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob)
-    .then(console.log(`${salary}`))
-    .then(console.log(`${id}`))
     .then(job => res.json(job));
 })
 

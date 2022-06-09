@@ -95,10 +95,8 @@ function updateJobs(event) {
   event.preventDefault()
   const form  = event.target
   const data = Object.fromEntries(new FormData(form))
-  console.log(data)
   const jobDOM = form.closest('.job')
   const jobId = jobDOM.dataset.id
-  console.log(jobId)
   
   fetch(`/api/jobs/${jobId}`, {
     method: 'PUT',
@@ -108,7 +106,6 @@ function updateJobs(event) {
   .then(res => res.json())
   .then(() => {
     const currentJob = state.jobs.filter(t => t.id == jobId)[0]
-    console.log(currentJob)
     currentJob.position_title = data.position
     currentJob.type_of_employment = data.typeOfEmployment
     currentJob.salary = data.salary
@@ -133,7 +130,6 @@ function updateJobs(event) {
 function deleteJob(event) {
   const deleteBtn = event.target
   const jobDOM = deleteBtn.closest('.job')
-  console.log(`${jobDOM}`)
   const jobId = jobDOM.dataset.id
   fetch(`/api/jobs/${jobId}`, {
     method: 'DELETE',
