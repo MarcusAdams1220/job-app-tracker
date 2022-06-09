@@ -13,7 +13,7 @@ function login(event) {
     state.loggedInUserName = user.userName
     state.sessionId = user.sessionId
 
-    document.querySelector('.heading').innerHTML =`Welcome ${state.loggedInUserName} to Your Job Applications`    
+    // document.querySelector('.heading').innerHTML =`${state.loggedInUserName}, Welcome to Your Job Applications`    
     
     if(state.sessionId > 0) {
       renderJobButtons()
@@ -31,7 +31,6 @@ function login(event) {
       image.src = user.errorImage
       document.querySelector('#page').append(image)
       document.querySelector('#page').append(message)
-      
     }
   })
 }

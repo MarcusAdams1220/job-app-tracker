@@ -1,6 +1,6 @@
 function renderJobList() {
   document.querySelector('#page').innerHTML = `
-  <section class="josb-list">
+  <section class="job-list">
     ${renderJobs()}
 
   </section>
@@ -17,9 +17,9 @@ function renderJobs() {
   <section class="job" data-id="${job.id}">
     <header>
       <h2>${job.position_title}</h2>
-      <span onClick="deleteJob(event)" 
+      <span class="btn btn-danger" "onClick="deleteJob(event)" 
       >Delete</span>
-      <span onClick="renderEditJob(event)">Edit</span>
+      <span class="btn btn-success" onClick="renderEditJob(event)">Edit</span>
     </header>
     <p>Job Type: ${job.type_of_employment}</p>
     <p>Salary: ${job.salary}</p>

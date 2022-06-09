@@ -8,6 +8,7 @@
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
   rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/navigation.css">
@@ -29,31 +30,34 @@
   
 </head>
 <body>
-  <h1 class="heading">Welcome to Your Job Applications</h1>
-  <nav class="header-nav">
-    <ul class="nav-list">
-      <li class="material-icons sign-up" onClick="renderSignUp()">person_add</li>
-      <li class="material-icons login" onClick="renderLogin()">login</li>
-    </ul>
-  </nav> 
+  <header class="main-header">
+    <h1 class="heading">Welcome to Your Job Applications</h1>
+    <nav class="header-nav">
+      <ul class="nav-list">
+        <li class="material-icons sign-up" onClick="renderSignUp()">person_add</li>
+        <li class="material-icons login" onClick="renderLogin()">login</li>
+      </ul>
+    </nav>
+  </header>
  
   <main id="page" class="content">
-    <section class="job-list">
-      <section class="job">
-        <ul class="job-board-list">
-          <li><a href="https://au.indeed.com/">Indeed</a></li>
+    <h2 class="find-jobs">Find Jobs To Apply For:</h2>
+    <section class="job-board-list">
+      <section class="job-board">
+        <ul>
+          <li><a href="https://au.indeed.com/" target=”_blank” ><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Indeed_logo.png/800px-Indeed_logo.png"></a></li>
         </ul>
       </section>
 
-      <section class="job">
-        <ul class="job-board-list">
-          <li><a href="https://au.jora.com/">Jora</a></li>
+      <section class="job-board">
+        <ul>
+          <li><a href="https://au.jora.com/" target=”_blank” ><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Jora.png"></a></li>
         </ul>
       </section>
       
-      <section class="job">
-        <ul class="job-board-list">
-          <li><a href="https://www.seek.com.au/">Seek</a></li>
+      <section class="job-board">
+        <ul>
+          <li><a href="https://www.seek.com.au/" target=”_blank” ><img src="https://www.bullhorn.com/wp-content/uploads/2021/06/Seek_com_au_logo.png"></a></li>
         </ul>
       </section>
 

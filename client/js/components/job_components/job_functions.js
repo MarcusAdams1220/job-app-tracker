@@ -93,7 +93,7 @@ function renderAddJob() {
           </select>
         </fieldset>
 
-        <button>Add Job</button>
+        <button class="btn btn-success">Add Job</button>
       </form>
     </section>
   `
@@ -159,7 +159,7 @@ function renderJobById(currentJob) {
           </select>
         </fieldset>
 
-        <button>Done</button>
+        <button class="btn btn-success">Done</button>
       </form>
     </section>
     `
