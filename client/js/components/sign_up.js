@@ -17,10 +17,7 @@ function signUp(event) {
     } else if(user.userAlreadyExists) {
       renderUserAlreadyExistsError()
     } else {
-      state.loggedInUserName = userName
-      state.sessionId = user.id
-      console.log(userName)
-      renderJobList()
+      renderLogin()      
     }
   })
 }

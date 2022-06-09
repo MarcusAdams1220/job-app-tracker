@@ -100,7 +100,6 @@ function renderAddJob() {
 }
 
 function renderJobById(currentJob) {
-  console.log(currentJob.position_title,"currentJob")
   document.querySelector('#page').innerHTML = 
   `
     <section class="job" data-id="${currentJob.id}">
