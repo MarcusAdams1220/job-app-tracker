@@ -17,7 +17,7 @@ function renderJobs() {
   <section class="job" data-id="${job.id}">
     <header>
       <h2>${job.position_title}</h2>
-      <span class="btn btn-danger" "onClick="deleteJob(event)" 
+      <span class="btn btn-danger" onClick="deleteJob(event)" 
       >Delete</span>
       <span class="btn btn-success" onClick="renderEditJob(event)">Edit</span>
     </header>
