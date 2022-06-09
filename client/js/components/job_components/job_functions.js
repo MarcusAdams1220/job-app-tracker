@@ -100,20 +100,21 @@ function renderAddJob() {
 }
 
 function renderJobById(currentJob) {
+  console.log(currentJob.position_title,"currentJob")
   document.querySelector('#page').innerHTML = 
   `
     <section class="job" data-id="${currentJob.id}">
       <form onSubmit="updateJobs(event)">
         <header>
           <p>Position: </p>
-          <input type="text" name="position" value=${currentJob.position_title}>
+          <input type="text" name="position" value="${currentJob.position_title}">
         </header>
 
-        <p>Job Type: </p> <input type="text" name="typeOfEmployment" value=${currentJob.type_of_employment}>
+        <p>Job Type: </p> <input type="text" name="typeOfEmployment" value="${currentJob.type_of_employment}">
 
-        <p>Salary: </p> <input type="text" name="salary" value=${currentJob.salary}> 
+        <p>Salary: </p> <input type="text" name="salary" value="${currentJob.salary}"> 
 
-        <p>Job Link: </p> <input type="text" name="jobAdURL" value=${currentJob.job_url}> 
+        <p>Job Link: </p> <input type="text" name="jobAdURL" value="${currentJob.job_url}"> 
 
         <p>Closing Date: </p> <input type="text" name="closingDate" value="${currentJob.closing_date}">
 
