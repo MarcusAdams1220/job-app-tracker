@@ -85,6 +85,30 @@ function renderEditJob(event) {
 
         <p>Date Applied: <input type="text" name="dateApplied" value="${currentJob.date_applied}">
 
+        <fieldset>
+          <label for="">Upcoming Interview:</label>
+          <select name="upcomingInterview">
+            <option value="${currentJob.upcoming_interview}">No</option>
+            <option value="yes">Yes</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <label for="">Completed Interview:</label>
+          <select name="completedInterview">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <label for="">Received Job Offer:</label>
+          <select name="receivedJobOffer">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
+        </fieldset>
+
         <button>Done</button>
       </form>
     </section>
