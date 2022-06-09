@@ -14,8 +14,15 @@ router.post('/', (req, res) => {
     res.json({ passwordTooShort: true})
   } else {
   User
-    .create(name, email, passwordDigest)
-    .then(userName => res.json(userName))
+    .findByEmail(email)
+    .then(user => {
+      if (user) {
+        res.json({userAlreadyExists: true})
+      } else {
+        User.create(name, email, passwordDigest)
+        .then(userName => res.json(userName))
+      }
+    })
   }
 })
 

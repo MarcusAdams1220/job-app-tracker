@@ -39,6 +39,8 @@ function signUp(event) {
       renderNameTooShortError()
     } else if(user.passwordTooShort) {
       renderPasswordTooShortError()
+    } else if(user.userAlreadyExists) {
+      renderUserAlreadyExistsError()
     } else {
       state.loggedInUserName = user
       renderJobList()
