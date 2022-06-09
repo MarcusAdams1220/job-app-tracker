@@ -11,6 +11,7 @@ router.get("/", (req, res) => {
   Job
   .findJobsByUserId(req.session.userId)
   .then((jobs) => res.json(jobs))
+  // .then(console.log(state))
 });
 
 router.post("/:id", (req, res) => {
@@ -24,6 +25,17 @@ router.post("/:id", (req, res) => {
     .then(job => res.json(job));
    
 });
+
+router.put("/:id", (req, res) => {
+  const id = req.params.id
+  const {position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhone, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob} = req.body
+
+  Job
+    .update(id, position, jobAdURL, closingDate, companyName, companyURL, contactPerson, contactPhone, contactEmail, typeOfEmployment, salary, notesAboutCompany, jobAdScreenshot, dateApplied, upcomingInterview, completedInterview, receivedJob)
+    .then(console.log(`${salary}`))
+    .then(console.log(`${id}`))
+    .then(job => res.json(job));
+})
 
 router.delete("/:id", (req, res) => {
   const jobId = req.params.id
