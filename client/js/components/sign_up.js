@@ -34,16 +34,13 @@ function signUp(event) {
     body: JSON.stringify(data)
   })
   .then(res => res.json())
-  .then(userName => {
-    if (userName.message) {
-      console.log(userName.message)
-      const message = document.createElement('p').innerText = userName.message
-      document.querySelector('#page').append(message)
-      const image = document.createElement('img')
-      image.src = userName.image
-      document.querySelector('#page').append(image)
+  .then(user => {
+    if (user.nameTooShort) {
+      renderNameTooShortError()
+    } else if(user.passwordTooShort) {
+      renderPasswordTooShortError()
     } else {
-      state.loggedInUserName = userName
+      state.loggedInUserName = user
       renderJobList()
     }
   })
