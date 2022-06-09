@@ -3,11 +3,11 @@ const db = require('../db/db')
 const Job = {
   findAll: () => {
     const sql = 'SELECT * FROM jobs'
-
     return db
       .query(sql)
       .then(dbRes => dbRes.rows)
   },
+
 
   findJobsByUserId: (userId) => {
     const sql = 'SELECT * FROM jobs WHERE user_id = $1'
