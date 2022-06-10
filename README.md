@@ -54,3 +54,6 @@
 
 ### Pop-Up Modal
 <p>Users can click an application to view all it's details. Before clicking the application will be an overview that only shows key information.</p>
+
+## Collaboration Notes
+<p>In the planning stages it would have prevented multiple issues by discussing variable names & consistently using the same variable names across developers. The Trello board was extremely benficial for breaking down allocation & assigning of tasks. Clear & regular communication across developers decreased downtime caused by bugs. We had some issues with GitHub so commiting to GitHub more frequently would decrease downtime.</p>
