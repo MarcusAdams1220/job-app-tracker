@@ -31,6 +31,7 @@
   border-radius: 10px;
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.168);
   vertical-align: middle;
+  max-width: 800px;
 }
 
 .job li {
