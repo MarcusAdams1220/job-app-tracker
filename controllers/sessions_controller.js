@@ -18,7 +18,7 @@ router.post("/", (req, res) => {
         req.session.userId = user.id;
         res.json({userName: user.name, sessionId: req.session.userId})
       } else {
-        res.json({errorMessage: 'Password is incorrect', errorImage: 'https://play-lh.googleusercontent.com/3_ud5mBJDUXaYnuc9Hq76efuvGGq1zLozvgnYEHwtngosamV0zUZ6KyZf87cbziytQ'})
+        res.json({errorMessage: 'Password is incorrect', errorImage: 'https://img.icons8.com/flat-round/344/lock--v1.png'})
       }
     }
   })
